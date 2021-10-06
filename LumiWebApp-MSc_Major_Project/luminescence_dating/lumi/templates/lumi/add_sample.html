@@ -1,0 +1,16 @@
+{% extends 'lumi/app_base.html' %}
+
+{% block content%}
+<h1>New Sample</h1>
+
+<form action="{% url 'addSampleTodbPage' %}" method="POST">
+    {% csrf_token %}
+    <table class = singleSided>
+        {{ form.as_table }}
+    </table>  
+    <div>
+        <input type="reset" class = deletebuttons>
+        <button type="submit" name = 'addSample' value = {{project_id}} class = "submitbuttons"> Submit</button>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,198 @@
+/* CSS for the app section of the website.
+It was decided to keep this seperate from the main design as
+the templates are used to keep the application looking the same, 
+and modifying these templates with the sidebar from a seperate css file
+made sense.*/
+
+ul{
+    display: inline-block;
+    text-align: left;
+}
+li{
+    text-align: left;
+    color: black;
+}
+
+p{
+    color: black;
+}
+
+
+
+.sidebar{
+    margin-top: 80px;
+    height: 100%;
+    width: 250px;
+    position:fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(161, 18, 18);
+    overflow-x: hidden;
+    padding-top: 25px;
+
+}
+
+.sidebar a {
+    padding:6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px; 
+    color: rgb(211, 211, 211);
+    display:block;
+}
+.sidebar a:hover{
+    color: rgb(117, 67, 67);
+}
+
+.main{
+    margin-left: 250px;
+    padding: 0px 10px;
+    padding-top: 80px;
+    
+}
+.main .newProject{
+	text-align: center;
+}
+
+.sidebar span{
+    padding:6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px; 
+    color: rgb(0, 0, 0);
+    display:block;
+}
+
+label {
+    text-align: left;
+    display: inline-block;
+    width: 300px;
+    text-align: right;
+}
+
+.main .appRow .appColumn .block {
+    font-family: 'Overpass', sans-serif;
+	color: rgb(161, 18, 18);
+    text-align: center;
+    display:inline-block
+}
+
+form{
+    text-align: center;
+    
+}
+
+.viewbuttons{
+    background-color: rgb(94, 93, 93);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.deletebuttons{
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.addbuttons{
+    text-align: center;
+    background-color: rgb(23, 178, 184);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+}
+.submitbuttons{
+    margin-top:10px;
+    background-color: rgb(161, 18, 18);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+}
+.calcbuttons{
+    text-align: right;
+    margin-top:10px;
+    background-color: rgb(255, 123, 0);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.main .appColumn {
+    float: left;
+    width: 50%;
+    color:rgb(161, 18, 18);  
+    text-align: center;  
+  }
+  
+  /* Clear floats after the columns */
+.main .appRow:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.jumbotron h1 {
+    color:  rgb(161, 18, 18);
+}
+h1 {
+    color:  rgb(161, 18, 18);
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+h2 {
+    display:inline-block;
+    text-align: left;
+    color: rgb(161, 18, 18);
+}
+h4{
+    padding-left: 7px;
+}
+
+.projListSection{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-top:0px;
+    border-bottom:0px;
+    border-right:0px;
+    border-color: rgb(161, 18, 18);
+    border-width: 5px;
+    text-align: left;
+}
+
+.main form .projListSection{
+    text-align: left;
+}
+
+table.singleSided{
+    text-align: center;
+    display: inline-block;
+    padding-bottom: 25px;
+    margin-right: 100px;
+}
+table.rightSide{
+    margin-right:200px;
+}
+
+
+
+
+
+

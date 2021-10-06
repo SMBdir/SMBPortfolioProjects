@@ -1,0 +1,12 @@
+{% extends 'lumi/app_base.html' %}
+{% block content%}
+<h1>Create a new Project</h1>
+<br>
+
+    <table class = singleSided>
+        {{ form.as_table }}
+    </table>
+
+<br>
+<button type="submit" name = 'addProject' class = "submitbuttons"> Create Project</button>
+{% endblock %}

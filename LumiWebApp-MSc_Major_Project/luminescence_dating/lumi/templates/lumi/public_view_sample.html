@@ -1,0 +1,22 @@
+{% extends 'lumi/app_base.html' %}
+
+{% block content%}
+<h1>View Sample -- {{chosen_sample.sample_name}}</h1>
+<div class="appRow">
+    <div class="appColumn">
+        <h2>Inputs</h2>
+        <br>
+        <table>
+            {{filledForm}}
+        </table>
+    </div>
+    <div class= "appColumn">
+        <h2>Outputs</h2>
+        <br>
+        <table>
+            {{OutputFilledForm}}
+        </table>
+        
+    </div>
+</div>
+{%endblock%}

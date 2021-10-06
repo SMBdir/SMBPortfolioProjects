@@ -1,0 +1,46 @@
+{% extends 'lumi/app_base.html' %}
+
+{% block content%}
+<div class="jumbotron">
+  <h1 class="display-4">Welcome To Lumi!</h1>
+  <p class="lead">Incorporating DRAC (dose rate calculator, by Professor Duller).</p>
+  <hr class="my-4">
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="https://www.aber.ac.uk/en/dges/research/quaternary/luminescence-research-laboratory/dose-rate-calculator/?" role="button">Learn more</a>
+  </p>
+</div>
+
+<div class = "approw">
+    <div class = "appColumn">
+    <h2>About the Application</h2>
+    <p>
+    This application was created to provide researchers in the Luminescence dating commuinty a place to store samples used in their research.
+    Furthermore, interfacing the dose rate calculator(DRAC) to efficiently calculate outputs on sample data. 
+    Additionally, we provided the capability to group samples into projects for organisational purposes. The projects can then be used to 
+    allow anyone working on the project access to all the samples, and also the ability to make a project publicly available to the entire luminescence dating community.
+    Sharing resources in this way is aimed to provide a more efficient work flow for researchers, and providing a open platform for researches to collaborate with one another.
+    </p>
+    <p>
+    Professor Geoff Duller of Aberystwyth University, commissioned this project because of growing problems with depreciated software and tiresome workflow. Connecting to the DRAC system with an updated database 
+    and automating previously manual process are designed to support the research in the field with an easy to use platform that can be used in both local projects and as a commuinty.
+    </p>
+    </div>
+    <div class = "appColumn">
+    <h2>How to Use the Application</h2>
+    <p>
+    Congratulations on becoming a part of Lumi! To learn more about the DRAC system you can follow the learn more link above. 
+    Now you have logged in to the application you can explore using the sidebar located to the left of the screen. Here are some of the basics of how lumi operates:
+    </p>
+    <ul>
+      <li>Create a project in the "My Projects page".</li>
+      <li>From inside a project you may add samples that are automatically associated with that project.</li>
+      <li>The user which creates a project has the reserved power to delete or publicize a project.</li>
+      <li>Once a project is created, you may view the sample data in "view". From inside view you may also edit the inputs, updating the sample.</li>
+      <li>When you are ready to get outputs from the DRAC system, you can use the "DRAC" button. These outputs are then automatically added to the view page under OUTPUTS.</li>
+      <li>If changes are made to the inputs in the sample, the outputs won't be updated untill "DRAC" is run again.</li>
+      <li>Different users working on the same project can be added or removed from the "manage users" page.</li>
+    
+    </ul>
+    </div>
+</div>
+{% endblock %}

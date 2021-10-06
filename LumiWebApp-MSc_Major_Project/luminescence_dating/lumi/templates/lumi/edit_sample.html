@@ -1,0 +1,27 @@
+{% extends 'lumi/app_base.html' %}
+
+{% block content%}
+<h1>View Sample -- {{chosen_sample.sample_name}}</h1>
+<em>*NOTE: After changes are made to inputs, outputs may need to be re-calculated.</em>
+<div class="appRow">
+    <div class="appColumn">
+      <h2>Inputs</h2>
+        <br>
+        <form action="{% url 'saveSamplePage' %}" method="POST">
+            {% csrf_token %}
+        <table>
+            {{filledForm}}
+        </table>
+        <br>
+        <div>
+            <input type="reset" class = deletebuttons />
+            <button type="submit" name = 'updateSample' value = "{{chosen_sample.id}}" class = "addbuttons"> Save Changes</button> 
+        </div>
+        </form>
+    </div>
+    
+    <div class= "appColumn">
+    
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'lumi/app_base.html' %}
+
+{% block content%}
+<h1>My Projects</h1>
+<em>*NOTE: Only the user who created a project may delete it or make it public.</em>
+<div class="appRow">
+    <div class="appColumn">
+    <form action="{% url 'chooseProjectPage' %}" method="POST">
+        {% csrf_token %}
+            {%for project in project_list%}
+                {%for user in project.users.all%}
+                    {%if user == request.user%}
+                    <div class = projListSection>
+                        <div class = container>
+                        <h2>{{project.project_name}}</h2>
+                            <br>
+                            <em>Owner: {{project.created_by}}</em>
+                            <br>
+                            <em>Created at: {{project.created_at}}</em>
+                            <br>
+                            <em>Published: {{project.isPublic}}</em>
+                        </div>
+                        <div class = container>
+                            <button type="submit" name = 'viewSample' value = "{{project.id}}" class = "viewbuttons"> View</button> 
+                            <button type="submit" name = 'manageUsers' value = "{{project.id}}" class = "addbuttons">Manage Users</button>
+                            <button type="submit" name = 'publishProject' value = "{{project.id}}" class = "calcbuttons"> Toggle Publish</button>
+                            <button type="submit" name = 'deleteProject' value = "{{project.id}}" class = "deletebuttons" onclick="return confirm('Are you sure you want to delete this?')"> Delete</button>
+                        <input type="hidden" name="user" value={{request.user}}>
+                        </div>  
+                    </div>
+                    {%endif%}
+                {%endfor%}
+            {% endfor %}
+    </form>
+    </div>
+    <div class="appColumn"> 
+        <h2>Add a new Project</h2>
+            <form action="{% url 'addProjectTodbPage' %}" method="POST">
+                {% csrf_token %}
+                    <table>
+                        {{form.as_table}}
+                    </table>
+                    <button type="submit" name = 'addProject' value = {{request.user}} class = "submitbuttons"> Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
