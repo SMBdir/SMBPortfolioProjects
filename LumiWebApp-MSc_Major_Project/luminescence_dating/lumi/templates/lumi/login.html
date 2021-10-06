@@ -1,0 +1,24 @@
+{% extends 'lumi/base.html' %}
+
+<!DOCTYPE html>
+{% block content%}
+<html>
+	<body>
+		<div class="login-form">
+			<h1>Login</h1>
+			<form action="" method="POST">
+			{% csrf_token %}
+				<input type="text" name="username" placeholder="Username" required>
+				<input type="password" name="password" placeholder="Password" required>
+				<input type="submit">
+			</form>
+		</div>
+		<div>
+		{%for message in messages%}
+		<p id="messages"> {{message}}</p>
+		{% endfor %}
+		</div>
+
+	</body>
+	{% endblock %}
+</html>

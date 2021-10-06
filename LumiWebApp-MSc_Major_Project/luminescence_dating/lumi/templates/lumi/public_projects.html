@@ -1,0 +1,36 @@
+{% extends 'lumi/app_base.html' %}
+{% block content%}
+<h1>Published Projects</h1>
+<div class="appRow">
+    <div class="appColumn">
+    <h2>These are all the projects currently Public!</h2>
+    <form action="{% url 'viewPublicProjectPage' %}" method="POST">
+        {% csrf_token %}
+            {%for project in project_list%}
+                    <div class = projListSection>
+                        <div class = container>
+                        <h2>{{project.project_name}}</h2>
+                            <br>
+                            <em>Owner: {{project.created_by}}</em>
+                            <br>
+                            <em>Created at: {{project.created_at}}</em>
+                            <br>
+                            {%for user in project.users.all%}
+                                {%if user.username == project.created_by%}
+                                    <em>Contact Email: {{user.email}}</em>
+                                {%endif%}
+                            {%endfor%}
+                        </div>
+                        <div class = container>
+                            <button type="submit" name = 'viewSample' value = "{{project.id}}" class = "viewbuttons"> View</button> 
+                        <input type="hidden" name="user" value={{request.user}}>
+                        </div>  
+                    </div>
+            {% endfor %}
+    </form>
+    </div>
+    <div class="appColumn">
+        <h2>Filter features coming soon.</h2>
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,39 @@
+{% extends 'lumi/app_base.html' %}
+
+<!DOCTYPE html>
+{% block content%}
+<h1>-- Manage User Access --</h1>
+<em>*NOTE: Owners cannot be removed from their own projects.</em>
+<div class="appRow">
+    <div class="appColumn">
+    <form action="{% url 'manageProjectUsersPage' %}" method="POST">
+        {% csrf_token %}
+            {%for user in Users%}
+                <div class = projListSection>
+                    <div class = container>
+                        <h2>{{user}}</h2>
+                        <br>
+                        <em>Email: {{user.email}}</em>
+                    </div>
+                    <div class = container>
+                        <input type="hidden" name="project_id" value={{project_id}}> 
+                        <button type="submit" name = 'deleteUser' value = "{{user}}" class = "deletebuttons" onclick="return confirm('Are you sure you want to remove this user?')"> Remove</button>  
+                    </div>
+                </div>
+            {% endfor %}
+    </form>
+    </div>
+    <div class="appColumn">
+        <h2>Add a valid user by username:</h2>
+        <div>
+            <form action="{% url 'manageProjectUsersPage' %}" method="POST">
+                {% csrf_token %}
+                <table class = rightSide>
+                    {{addUserForm.as_table}}
+                </table>
+                <button type="submit"  name="addUser" value={{project_id}}  class = "submitbuttons"> Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock%}

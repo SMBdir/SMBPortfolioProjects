@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+{% extends 'lumi/base.html' %}
+
+{% block content%}
+
+	<div class="login-form">
+			<h1>Register</h1>
+			<form action="" method="POST">
+			{% csrf_token %}
+			{{form}}
+				<!--  <input type="text" name="username" placeholder="Username" required>//*
+				 <input type="text" name="username" placeholder="Username" required>//*
+				 <input type="text" name="username" placeholder="Username" required>//*
+				 
+				<input type="email" name="email" placeholder="Email" required>
+				<input type="password" name="password" placeholder="Password" required> 
+				<h3>Are you a Professor?</h3>
+				<input type="checkbox" name="isProfessor" required> -->
+				
+				<input type="submit" name="create user">
+				
+			</form>
+		</div>
+</body>
+{% endblock %}
+</html>

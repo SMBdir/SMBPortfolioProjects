@@ -1,0 +1,28 @@
+{% extends 'lumi/app_base.html' %}
+{% block content%}
+    <h1>Samples -- {{chosen_project.project_name}}</h1>
+    <div class="appRow">
+        <div class="appColumn">
+        <h2>You may view public samples but cannot make changes</h2>
+            {%for sample in sample_list%}
+            <form action="{% url 'publicViewSamplePage' %}" method="POST">
+                {% csrf_token %}
+                <div class = projListSection>
+                    <div class = container>
+                        <h2>{{sample.sample_name}}</h2>
+                        <br>
+                        <em>Created at: {{sample.created_at}}</em>
+                    </div>
+                    <div class = container>
+                        <button type="submit" name = 'viewSample' value = "{{sample.id}}" class = "viewbuttons"> View</button> 
+                    </div>    
+                </div>
+            </form>
+            {% endfor %}
+            </div>
+            <div class="appColumn">
+
+            </div>
+    </div>
+
+{% endblock %}
